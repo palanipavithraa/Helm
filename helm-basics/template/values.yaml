@@ -1,0 +1,9 @@
+replicas: 2
+image: dockerusername/imagename:24
+port: 5000
+
+appService:
+  type: NodePort
+  port: 80
+  targetPort:8080
+  nodePort: 30004
