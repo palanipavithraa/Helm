@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: {{ .app.Name }} -service
+spec:
+  type: {{ .Values.appService.type }}
+  selector:
+    app: {{ .app.Name }} 
+ports:
+  - port: {{ .Values.appService.port }}
+    targetPort: {{ .Values.appService.targetPort }}
+    nodePort: {{ .Values.appService.nodePort }}
